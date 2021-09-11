@@ -53,7 +53,7 @@ public class Menu {
     public static Book findBookByCode(String code) {
         
         for (Book book : books) {
-            if (book.getCode() == code) {
+            if (book.getCode().equals(code)) {
                 return book;
             }
         }
@@ -65,7 +65,7 @@ public class Menu {
     public static Magazine findMagazineByCode(String code) {
         
         for (Magazine magazine : magazines) {
-            if (magazine.getCode() == code) {
+            if (magazine.getCode().equals(code)) {
                 return magazine;
             }
         }
@@ -98,6 +98,8 @@ public class Menu {
         
         System.out.println("\nREGISTER BOOK");
         
+        code = scanner.nextLine();
+
         System.out.print("Enter code: ");
         code = scanner.nextLine();
         
@@ -127,6 +129,8 @@ public class Menu {
         
         System.out.println("\nREGISTER MAGAZINE");
         
+        code = scanner.nextLine();
+
         System.out.print("Enter code: ");
         code = scanner.nextLine();
         
@@ -157,7 +161,11 @@ public class Menu {
 
         System.out.println("\nLEND BOOK");
 
-        System.out.print("Enter code: ");
+        printBooks();
+
+        code = scanner.nextLine();
+
+        System.out.print("\nEnter code: ");
         code = scanner.nextLine();
 
         book = findBookByCode(code); 
@@ -185,7 +193,11 @@ public class Menu {
 
         System.out.println("\nGIVE BOOK BACK");
 
-        System.out.print("Enter code: ");
+        printBooks();
+
+        code = scanner.nextLine();
+
+        System.out.print("\nEnter code: ");
         code = scanner.nextLine();
 
         book = findBookByCode(code); 
@@ -211,10 +223,24 @@ public class Menu {
         System.out.println("\nCATALOGUE");
 
         System.out.println("\nBooks");
-        printBooks();
+        
+        if (books.size() != 0) {
+            printBooks();
+        } else {
+            System.out.println("\nThere are not books registered");
+        }
+        
+        System.out.println();
 
         System.out.println("\nMagazines");
-        printBooks();
+        
+        if (magazines.size() != 0) {
+            printMagazines();
+        } else {
+            System.out.println("\nThere are not magazines registered");
+        }
+
+        System.out.println();
 
     }
 
