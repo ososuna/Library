@@ -19,19 +19,18 @@ public class Book extends Publication implements Loanable {
 
     @Override
     public void giveBack() {
-        // TODO Auto-generated method stub
-        
+        this.borrowed = false;
     }
 
     @Override
     public void lend() {
-        // TODO Auto-generated method stub
-        
+        this.borrowed = true;
     }
 
     @Override
     public String toString() {
-        return "Book [borrowed=" + borrowed + "]";
+        return "\nCode: " + this.code + "\nTitle: " + this.title + "\nYear: " +
+                this.year + "\nIs Borrowed: " + this.borrowed;
     }
 
 }

@@ -2,24 +2,25 @@ package classes;
 
 public class Magazine extends Publication {
     
-    private String number;
+    private int number;
 
-    public Magazine(String code, String title, int year, String number) {
+    public Magazine(String code, String title, int year, int number) {
         super(code, title, year);
         this.number = number;
     }
 
-    public String getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
     @Override
     public String toString() {
-        return "Magazine [number=" + number + "]";
+        return "\nCode: " + this.code + "\nTitle: " + this.title + "\nYear: " +
+                this.year + "\nNumber: " + this.number;
     }
 
 }

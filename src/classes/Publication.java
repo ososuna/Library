@@ -2,9 +2,9 @@ package classes;
 
 public abstract class Publication {
     
-    private String code;
-    private String title;
-    private int year;
+    protected String code;
+    protected String title;
+    protected int year;
     
     public Publication(String code, String title, int year) {
         this.code = code;
